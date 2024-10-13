@@ -1,0 +1,22 @@
+pipeline {
+    agent any
+
+    stages {
+        stage('Cloner le code') {
+            steps {
+                git 'https://github.com/azizbramli/DEVOPS.git'
+            }
+        }
+        stage('Afficher la date') {
+            steps {
+                echo "La date actuelle est : ${new Date()}"
+            }
+        }
+    }
+
+    post {
+        always {
+            echo 'Pipeline terminé avec succès.'
+        }
+    }
+}
