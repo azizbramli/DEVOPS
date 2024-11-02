@@ -1,6 +1,5 @@
 package tn.esprit.tpfoyer.service;
 
-
 import org.junit.jupiter.api.Assertions;
 import org.junit.jupiter.api.Test;
 import org.junit.jupiter.api.BeforeEach;
@@ -11,7 +10,6 @@ import org.mockito.Mockito;
 import org.mockito.junit.jupiter.MockitoExtension;
 import tn.esprit.tpfoyer.entity.Universite;
 import tn.esprit.tpfoyer.repository.UniversiteRepository;
-
 
 import java.util.ArrayList;
 import java.util.List;
@@ -112,8 +110,8 @@ class UniversiteServiceImplMockTest {
 
     @Test
     public void testModifyUniversite() {
-        // Mock the repository's save and findById methods
-        Mockito.when(universiteRepository.findById(1L)).thenReturn(Optional.of(universite1));
+        // Use lenient() to allow the findById stubbing without triggering UnnecessaryStubbingException
+        Mockito.lenient().when(universiteRepository.findById(1L)).thenReturn(Optional.of(universite1));
         Mockito.when(universiteRepository.save(Mockito.any(Universite.class))).thenReturn(universite1);
 
         // Modify the Universite instance
