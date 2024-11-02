@@ -10,7 +10,7 @@ services:
     volumes:
       - db:/var/lib/mysql
 
-  kaddemNewv0.1:
+  tpfoyerNewv0.1:
     depends_on:
       - mysqldb
     image: azizbramli/tp-foyer
