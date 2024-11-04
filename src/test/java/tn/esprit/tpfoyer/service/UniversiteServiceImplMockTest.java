@@ -48,7 +48,7 @@ class UniversiteServiceImplMockTest {
     }
 
     @Test
-    public void testRetrieveAllUniversites() {
+    void  testRetrieveAllUniversites() {
         // Mock the repository's findAll method
         Mockito.when(universiteRepository.findAll()).thenReturn(listUniversites);
 
@@ -65,7 +65,7 @@ class UniversiteServiceImplMockTest {
     }
 
     @Test
-    public void testRetrieveUniversite() {
+     void testRetrieveUniversite() {
         // Mock the repository's findById method
         Mockito.when(universiteRepository.findById(1L)).thenReturn(Optional.of(universite1));
 
@@ -81,7 +81,7 @@ class UniversiteServiceImplMockTest {
     }
 
     @Test
-    public void testAddUniversite() {
+     void testAddUniversite() {
         // Mock the repository's save method
         Mockito.when(universiteRepository.save(Mockito.any(Universite.class))).thenReturn(universite1);
 
@@ -97,7 +97,7 @@ class UniversiteServiceImplMockTest {
     }
 
     @Test
-    public void testRemoveUniversite() {
+     void testRemoveUniversite() {
         // Define behavior for repository deleteById
         Mockito.doNothing().when(universiteRepository).deleteById(1L);
 
@@ -109,7 +109,7 @@ class UniversiteServiceImplMockTest {
     }
 
     @Test
-    public void testModifyUniversite() {
+     void testModifyUniversite() {
         // Use lenient() to allow the findById stubbing without triggering UnnecessaryStubbingException
         Mockito.lenient().when(universiteRepository.findById(1L)).thenReturn(Optional.of(universite1));
         Mockito.when(universiteRepository.save(Mockito.any(Universite.class))).thenReturn(universite1);
