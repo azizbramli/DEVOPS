@@ -13,7 +13,7 @@ services:
   tpfoyerNewv0.1:
     depends_on:
       - mysqldb
-    image: ghadasouissi/tp-foyer
+    image: ghada862/tp-foyer
     restart: on-failure
     ports:
       - "8089:8089"
