@@ -8,61 +8,12 @@ import tn.esprit.tpfoyer.entity.Bloc;
 import java.util.List;
 
 
-
-
-
-
-
-
-
-
-
-
-
-
 @Repository
  public interface BlocRepository extends JpaRepository<Bloc, Long> {
 
 
 
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-  // Récupérer les Blocs qui ont une capacité supérieure à 50 :
-
    List<Bloc> findAllByCapaciteBlocGreaterThan(long c);
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-   // Récupérer les Blocs qui ont une capacité inférieurs à 50 :
-   // List<Bloc> findAllByCapaciteBlocLessThan(long c);
 
 
     // Récupérer tous les Blocs qui ont un nom qui commence par "Bl" :
@@ -77,35 +28,10 @@ import java.util.List;
     Bloc findByNomBloc (String nom);
 
 
-
-
-
-
-
-
-
-
-
-
-
-
-
-    /* No need to code CRUD here. Its is already in the
-    interfaces provided by the framework Spring Data JPA :
-       - CrudRepository or
-       - PagingAndSortingRepository or
-       - JpaRepository
-     */
-
-
     Bloc findBlocByNomBlocAndCapaciteBlocGreaterThan(String nb, long c);
 
     // List des blocs non affectés à aucun foyer :
     List<Bloc> findAllByFoyerIsNull();
-
-
-    //Bloc findByC
-    //findAllByFoyerIsNull();
 
 
 
